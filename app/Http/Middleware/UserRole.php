@@ -16,9 +16,7 @@ class UserRole
     
     public function handle(Request $request, Closure $next, $userRole)
     {
-        $userRole = array(0,1,2);
-        
-        if(in_array(auth()->user()->role, $userRole)){
+        if(auth()->user()->role == $userRole){
             return $next($request);
         }
           
